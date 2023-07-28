@@ -2,15 +2,20 @@
 <html>
   <head>
     <style>
-      /* Optional: Style the iframe to fit the screen */
+      /* Apply the scaling transformation to the iframe */
       #game_drop {
+        /* Apply a scale transformation of 0.8 (80%) to the X-axis to zoom in from the left and right */
+        transform: scaleX(0.8);
+        /* Optionally, you can use the transform-origin property to control the transformation origin */
+        transform-origin: left center; /* Zoom from the left edge */
+        /* Additional optional styles */
         width: 100vw;
         height: 100vh;
       }
     </style>
   </head>
   <body>
-    <!-- The iframe you want to make full screen -->
+    <!-- The iframe you want to zoom in -->
     <iframe
       src="https://v6p9d9t4.ssl.hwcdn.net/html/5594312/OffDay WebGL 3.0 Final Build/index.html"
       scrolling="no"
@@ -23,25 +28,5 @@
       allow="autoplay; fullscreen *; geolocation; microphone; camera; midi; monetization; xr-spatial-tracking; gamepad; gyroscope; accelerometer; xr; cross-origin-isolated"
       frameborder="0"
     ></iframe>
-
-    <script>
-      // Function to request full screen mode for the iframe
-      function enterFullScreen() {
-        var iframe = document.getElementById("game_drop");
-
-        if (iframe.requestFullscreen) {
-          iframe.requestFullscreen();
-        } else if (iframe.webkitRequestFullscreen) {
-          iframe.webkitRequestFullscreen();
-        } else if (iframe.mozRequestFullScreen) {
-          iframe.mozRequestFullScreen();
-        } else if (iframe.msRequestFullscreen) {
-          iframe.msRequestFullscreen();
-        }
-      }
-
-      // Listen for the click event on the document and trigger full screen
-      document.addEventListener("click", enterFullScreen);
-    </script>
   </body>
 </html>
