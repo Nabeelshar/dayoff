@@ -40,16 +40,8 @@
         }
       }
 
-      // Detect screen orientation change and trigger full screen
-      window.addEventListener("orientationchange", enterFullScreen);
-
-      // Optionally, you can also use the 'resize' event to trigger full screen on window resize.
-      // However, keep in mind that this event will trigger even for non-orientation-related resizes.
-      window.addEventListener("resize", function () {
-        if (screen.width > screen.height) {
-          enterFullScreen();
-        }
-      });
+      // Listen for the click event on the document and trigger full screen
+      document.addEventListener("click", enterFullScreen);
     </script>
   </body>
 </html>
